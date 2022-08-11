@@ -1,0 +1,23 @@
+GET /ping for receiving the "System is up!" message.
+curl -i -H "Content-Type: application/json" -X GET localhost:8080/ping
+
+GET /listAll for receiving a list of all packages as JSON:
+curl -i -H "Content-Type: application/json" -X GET localhost:8080/listAll
+
+POST /addPackage for add a perishable, as the response is the updated version of listOfPackages:
+curl -d '{"id":"a5808b2a-fa1b-417b-a6c6-140c508de1ab","name":"poiaasdju","notes":"asdg;ljas;dgkj","price":12111.0,"weight":1111.0,"packageType":2,"delivered":false,"date":"2022-08-10T03:00:00","expdate":"2022-08-11T02:00:00"}' -H 'Content-Type: application/json'  http://localhost:8080/addPerishable
+
+POST /removePackage/{id} with an package id with a path variable (The above perishable UUID):
+curl -X POST http://localhost:8080/removePackage/a5808b2a-fa1b-417b-a6c6-140c508de1ab
+
+GET /listOverduePackage, the response is the list of overdue packages:
+curl -i -H "Content-Type: application/json" -X GET localhost:8080/listOverduePackage
+
+GET /listUpcomingPackage, the response is the list of upcoming packages:
+curl -i -H "Content-Type: application/json" -X GET localhost:8080/listUpcomingPackage
+
+POST /markPackageAsDelivered/{id} for toggling the property "delivered" of a package with the {id}, the response is the updated version of list of packages:
+curl -X POST http://localhost:8080/markPackageAsDelivered/a5808b2a-fa1b-417b-a6c6-140c508de1ab
+
+GET /exit,for persisting the data to the JSON file, the response is "OK":
+curl -i -H "Content-Type: application/json" -X GET localhost:8080/exit

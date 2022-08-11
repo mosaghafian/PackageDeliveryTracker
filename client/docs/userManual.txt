@@ -1,0 +1,17 @@
+*** The webserver must have already been started in order for the communication to happen ***
+
+1) For the first time run, Application show that there is no package. No items to show is displayed since there are no packages yet.
+2) For adding package, click on the add package bottom on the button of the application's GUI.
+3) You can choose one of the free types of (Book, Perishable, Electronic).
+4) All the fields of the JDialog except for Notes should be filled. For the delivery date, you can click on the buttons and select a date
+, same thing follows for time. Time can be modified to more specific time period than 30 min hours by typing the time in the same format.
+5) By clicking Create, a package is added to the list of packages.
+6) A pop-up appears, click on ok.
+7) The newly package created appears on the screen of the main GUI.
+8) There is a check-box for delivery package delivery for the newer package that determines the delivery status of the package.
+9) There is a Remove button that removes the package from the package list.
+10) By clicking remove button the package is removed from the package list.
+11) There are three buttons on the top of the GUI of the main application: 1) All Packages 2) Overdue 3) Upcoming.
+12) Overdue button shows all the undelivered that their delivery date is before the current date.
+13) Upcoming packages shows all the packages with delivery due dates in the future.
+14) For terminating and saving the list, click on the close button. The list is automatically is save to a JSON.
