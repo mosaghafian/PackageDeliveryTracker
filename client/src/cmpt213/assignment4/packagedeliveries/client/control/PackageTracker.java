@@ -211,7 +211,6 @@ public class PackageTracker {
                     break;
 
             }
-
             listOfPackages.add(newPackage);
         }
     }
